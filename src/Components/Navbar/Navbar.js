@@ -1,35 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/navlogo.png';
+import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
 import './Navbar.css';
 
 function Navbar() {
-  const [isNavVisible, setIsNavVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [user, setUser] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      const isVisible = prevScrollPos > currentScrollPos;
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
 
-      setIsNavVisible(isVisible);
-      setPrevScrollPos(currentScrollPos);
-    };
+  const handleLogout = async () => {
+    await signOut(getAuth());
+    setUser(null);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [prevScrollPos]);
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
 
   return (
-    <div className={`navbar ${isNavVisible ? '' : 'hidden'}`}>
+    <div className={`navbar`}>
       <div className="nav-logo">
         <Link to='/'><img src={logo} alt="" /></Link>
       </div>
-      <div>
-        <Link to='/register/?userType='><button className='btn'>Get Started</button></Link>
+      <div className="user-actions">
+        {user ? (
+          <button className="user-icon" onClick={toggleDropdown}>
+            <i className="bi bi-person-circle"></i>
+          </button>
+        ) : (
+          <Link to="/register/?userType=" className="btn">
+            Get Started
+          </Link>
+        )}
+        {user && showDropdown && (
+          <ul className="dropdown-menu">
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/settings">Settings</Link></li>
+            <li><Link to="/preferences">Preferences</Link></li>
+            <li onClick={handleLogout}><Link to='/'>Logout</Link></li>
+          </ul>
+        )}
       </div>
     </div>
   );

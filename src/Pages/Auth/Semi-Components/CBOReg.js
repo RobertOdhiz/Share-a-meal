@@ -17,6 +17,9 @@ function CBORegistration() {
 
     const { CBOFormData, handleChange } = useFormState();
     const [step, setStep] = useState(1);
+    const [errorMessage, setErrorMessage] = useState(null);
+    const [successMessage, setSuccessMessage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handlePrev = () => {
         setStep(prevStep => Math.max(prevStep - 1, 1));
@@ -25,10 +28,23 @@ function CBORegistration() {
     const handleNext = () => {
         setStep(prevStep => Math.min(prevStep + 1, 10));
     };
+    
+    const handleSubmitCBO = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        try {
+          const message = await handleCBOReg(CBOFormData);
+          setSuccessMessage(message);
+        } catch (error) {
+          setErrorMessage(error.message || 'An error occurred during registration.');
+        } finally {
+            setIsLoading(false);
+        }
+      };
 
     return (
         <div>
-            <form className='form-container' onSubmit={() => handleCBOReg(CBOFormData)}>
+            <form className='form-container' onSubmit={handleSubmitCBO}>
                 {step === 1 &&
                     <Organization formData={CBOFormData} handleChange={handleChange} />
                 }
@@ -70,9 +86,11 @@ function CBORegistration() {
                 }
                 <div className='buttons'>
                 <button onClick={handlePrev}>Previous</button>
-                {step < 10 ? <button onClick={handleNext} >Next</button> : <button type="submit" disabled={!CBOFormData.complianceConfirmation || !CBOFormData.termsAgreement}>Finish</button>}
+                {step < 10 ? <button onClick={handleNext} >Next</button> : <button type="submit" disabled={!CBOFormData.complianceConfirmation || !CBOFormData.termsAgreement || isLoading}>{isLoading ? 'Setting things up...' : 'Finish'}</button>}
                 </div>
             </form>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>}
         </div>
     )
 };

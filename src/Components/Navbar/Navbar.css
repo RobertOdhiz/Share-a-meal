@@ -13,6 +13,8 @@
     padding-top: 20px;
     text-align: center;
     top: 0;
+    position: fixed;
+    background: #555555c9;
     backdrop-filter: blur(0.9);
   }
   
@@ -22,7 +24,6 @@
 }
 .nav-logo img{
     height: 100px;
-    margin: 10px;
 }
 
 .nav-menu{
@@ -102,5 +103,64 @@
 
   .navbar .hidden {
     display: none;
+  }
+  
+  .user-icon i {
+    font-size: 3em;
+    color: white;
+    filter: drop-shadow(0 2px 4px #ffffff50);
+  }
+
+  .user-icon i:focus {
+    color: #c85103;
+  }
+
+  
+  .user-actions {
+    position: relative;
+  }
+  
+  .user-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    list-style: none;
+  }
+  
+
+  .dropdown-menu {
+    display: block;
+    width: 160px;
+  }
+  .dropdown-menu li {
+    border-bottom: 1px solid #c85103;
+  }
+  
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: #c85103;
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: white;
+    color: #c85103;
   }
   
