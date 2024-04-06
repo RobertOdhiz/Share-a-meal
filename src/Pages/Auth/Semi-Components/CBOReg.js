@@ -25,10 +25,15 @@ function CBORegistration() {
     const handleNext = () => {
         setStep(prevStep => Math.min(prevStep + 1, 10));
     };
+    
+    const handleSubmitCBO = (e) => {
+        e.preventDefault();
+        handleCBOReg(e, CBOFormData);
+      };
 
     return (
         <div>
-            <form className='form-container' onSubmit={() => handleCBOReg(CBOFormData)}>
+            <form className='form-container' onSubmit={handleSubmitCBO}>
                 {step === 1 &&
                     <Organization formData={CBOFormData} handleChange={handleChange} />
                 }

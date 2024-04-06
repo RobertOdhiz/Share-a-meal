@@ -27,13 +27,35 @@ export function useFormState() {
     partnerships: '',
     previousExperience: '',
     documents: [],
-    complianceConfirmation: false,
     additionalComments: '',
     optInPreferences: [],
     termsAgreement: false,
   });
 
-  const [partnerFormData, setPartnerFormData] = useState({});
+  const [partnerFormData, setPartnerFormData] = useState({
+    partnerType: '',
+    companyName: '',
+    contactPersonName: '',
+    position: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    website: '',
+    products: [],
+    capacity: '',
+    transportationAvailability: [],
+    partnerships: '',
+    previousExperience: '',
+    documents: [],
+    complianceConfirmation: false,
+    additionalComments: '',
+    optInPreferences: [],
+    termsAgreement: false,
+    weekdayHours: [],
+    weekendHours: [],
+  });  
 
   const handleChange = (e, typeuser) => {
     const { name, value } = e.target;
