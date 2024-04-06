@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Share-a-Meal",
+  "name": "A web application that revolutionizes the process of food Donation by reselling food to CBOs at affordable prices",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "navlogo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "navlogo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "navlogo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

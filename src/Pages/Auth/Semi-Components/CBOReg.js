@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { handleCBOReg } from './utils';
-import { CBOFormData, handleChange } from '../../../Components/forms/formutils';
+import { useFormState } from '../../../Components/forms/formutils';
 import Terms from '../CBOForms/Terms';
 import Extra from '../CBOForms/Extra';
 import Documentation from '../CBOForms/Documentation';
@@ -9,10 +9,13 @@ import Resources from '../CBOForms/Resources';
 import Operations from '../CBOForms/Operations';
 import Services from '../CBOForms/Services';
 import GeographicLocation from '../CBOForms/Region';
-import ContactPerson from '../CBOForms/contactPerson';
-import Organization from '../CBOForms/organization';
+import ContactPerson from '../CBOForms/ContactPerson';
+import Organization from '../CBOForms/Organization';
+import './../Forms.css'
 
 function CBORegistration() {
+
+    const { CBOFormData, handleChange } = useFormState();
     const [step, setStep] = useState(1);
 
     const handlePrev = () => {
@@ -25,7 +28,7 @@ function CBORegistration() {
 
     return (
         <div>
-            <form className='form-container' onSubmit={handleCBOReg(CBOFormData)}>
+            <form className='form-container' onSubmit={() => handleCBOReg(CBOFormData)}>
                 {step === 1 &&
                     <Organization formData={CBOFormData} handleChange={handleChange} />
                 }
@@ -65,9 +68,10 @@ function CBORegistration() {
                 {step === 10 &&
                     <Terms formData={CBOFormData} handleChange={handleChange} />
                 }
-
+                <div className='buttons'>
                 <button onClick={handlePrev}>Previous</button>
-                {step < 10 ? <button onClick={handleNext} disabled={!formData.complianceConfirmation || !formData.termsAgreement}>Next</button> : <button type="submit" disabled={!formData.complianceConfirmation || !formData.termsAgreement}>Finish</button>}
+                {step < 10 ? <button onClick={handleNext} >Next</button> : <button type="submit" disabled={!CBOFormData.complianceConfirmation || !CBOFormData.termsAgreement}>Finish</button>}
+                </div>
             </form>
         </div>
     )

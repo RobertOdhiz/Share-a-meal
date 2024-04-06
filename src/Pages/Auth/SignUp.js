@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
-import CBORegistration from './Semi-Components/CBOReg';
-import PartnerRegistration from './Semi-Components/PartnerReg';
+import { useNavigate } from 'react-router-dom';
 
 function Registration() {
     const [userType, setUserType] = useState('');
+    const navigate = useNavigate();
 
     const handleUserTypeChange = (event) => {
         setUserType(event.target.value);
+    };
+
+    const handleSubmit = () => {
+        if (userType === 'CBO') {
+            navigate(`/register/CBO`);
+        } else if (userType === 'Partner') {
+            navigate(`/register/Partner`);
+        }
     };
 
     return (
@@ -31,12 +39,7 @@ function Registration() {
                     Partner
                 </label>
             </div>
-            {userType && userType === 'CBO' &&
-                <CBORegistration />
-            }
-            {userType && userType === 'Partner' &&
-                <PartnerRegistration />
-            }
+            <button onClick={handleSubmit}>Continue</button>
         </div>
     );
 }

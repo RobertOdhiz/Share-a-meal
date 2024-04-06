@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export const [CBOFormData, setCBOFormData] = useState({
+export function useFormState() {
+  const [CBOFormData, setCBOFormData] = useState({
     cboName: '',
     legalStatus: '',
     registrationNumber: '',
@@ -32,12 +33,12 @@ export const [CBOFormData, setCBOFormData] = useState({
     termsAgreement: false,
   });
 
-  export const [partnerFormData, setPartnerFormData] = useState({
+  const [partnerFormData, setPartnerFormData] = useState({});
 
-  });
-
-  export function handleChange (e, typeuser) {
+  const handleChange = (e, typeuser) => {
     const { name, value } = e.target;
+
+    console.log(name + value);
     if (typeuser === 'CBO') {
         setCBOFormData(prevValues => ({
             ...prevValues,
@@ -50,3 +51,6 @@ export const [CBOFormData, setCBOFormData] = useState({
         }))
     }
   };
+
+  return { CBOFormData, partnerFormData, handleChange };
+}

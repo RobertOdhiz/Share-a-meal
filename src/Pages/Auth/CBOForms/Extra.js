@@ -10,6 +10,7 @@ function Extra({ formData, handleChange }) {
                     placeholder='Additional Comments(Optional)'
                     value={formData.additionalComments}
                     onChange={(e) => handleChange(e, 'CBO')}
+                    required
                 ></textarea>
             </div>
         </div>

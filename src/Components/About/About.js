@@ -13,7 +13,7 @@ function About() {
       {/* <div className="column-right">
        <img src={Aboutpng} alt="" />
       </div> */}
-        {/* <h2>About Us</h2> */}
+        <h1>About Us</h1>
         <div className="abt-cards">
           <div className='card-item'>
             <div className='card-txt'>

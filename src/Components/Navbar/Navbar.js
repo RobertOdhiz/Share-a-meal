@@ -29,7 +29,7 @@ function Navbar() {
         <Link to='/'><img src={logo} alt="" /></Link>
       </div>
       <div>
-        <Link to='/login'><button className='btn'> Get Started</button></Link>
+        <Link to='/register/?userType='><button className='btn'>Get Started</button></Link>
       </div>
     </div>
   );

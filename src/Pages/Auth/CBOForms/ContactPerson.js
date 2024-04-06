@@ -29,13 +29,13 @@ function ContactPerson({ formData, handleChange }) {
             onChange={(e) => handleChange(e, 'CBO')}
             required
         />
-        <textarea
+        <input
             name='mailingAddress'
             placeholder='Mailing Address'
             value={formData.mailingAddress}
             onChange={(e) => handleChange(e, 'CBO')}
             required
-        ></textarea>
+        />
     </div>
     </div>
   )

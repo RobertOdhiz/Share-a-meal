@@ -1,0 +1,64 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    gap: 1em;
+}
+
+.form-component {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.form-fields {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+}
+
+.form-fields input, .form-fields textarea {
+    width: 500px;
+    height: 3em;
+    outline: none;
+    font-size: 1.25em;
+    padding: 10px 20px;
+}
+
+.form-container .buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.form-container .buttons button {
+    min-width: 200px;
+    height: 40px;
+    border-radius: 0.75em;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.form-container .buttons button:first-child {
+    background-color: #c85103;
+}
+
+.form-container .buttons button:last-child {
+    background-color: #5e9918;
+}
+
+
+  

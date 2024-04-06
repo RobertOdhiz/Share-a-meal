@@ -1,7 +1,9 @@
 .about{
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   margin-bottom: 50px;
+  padding: 2em;
+  background-color: rgba(128, 128, 128, 0.13);
 }
 
 .about .abt-sec {
@@ -48,12 +50,12 @@
 }
 
 .card-item .card-txt {
-  gap: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   padding: 20px;
+  gap: 2em;
 }
 
 .card-item .card-txt h5 {
