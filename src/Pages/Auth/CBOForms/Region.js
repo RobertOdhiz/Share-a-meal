@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../css/Region.css'
 
 function GeographicLocation({ formData, handleChange }) {
     return (
@@ -13,6 +14,7 @@ function GeographicLocation({ formData, handleChange }) {
                     onChange={(e) => handleChange(e, 'CBO')}
                     required
                 />
+                </div>
                 <div>
                     <label>
                         <input
@@ -22,8 +24,9 @@ function GeographicLocation({ formData, handleChange }) {
                             checked={formData.transportationAvailability === 'Yes'}
                             onChange={(e) => handleChange(e, 'CBO')}
                             required
-                        />
-                        Yes
+                            style={{fontSize: '20px', marginTop:"30px"}}
+
+                        />Yes
                     </label>
                     <label>
                         <input
@@ -33,12 +36,12 @@ function GeographicLocation({ formData, handleChange }) {
                             checked={formData.transportationAvailability === 'No'}
                             onChange={(e) => handleChange(e, 'CBO')}
                             required
-                        />
-                        No
+                            style={{fontSize: '10px', marginTop:"30px"}}
+                        /> No
                     </label>
                 </div>
             </div>
-        </div>
+        // </div>
     );
 }
 

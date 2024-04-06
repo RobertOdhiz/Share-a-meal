@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../css/Terms.css'
 
 function Terms({ formData, handleChange }) {
     return (
@@ -12,8 +13,8 @@ function Terms({ formData, handleChange }) {
                         checked={formData.complianceConfirmation}
                         onChange={(e) => handleChange(e, 'CBO')}
                         required
-                    />
-                    I confirm compliance with regulations.
+                        style={{fontSize: '10px',marginLeft: '130px'}}
+                    /> I confirm compliance with regulations.
                 </label>
                 <label>
                     <input
