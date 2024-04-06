@@ -48,11 +48,8 @@ function Footer() {
           <ul>About</ul>
           <ul>Contact</ul>
           <ul>Get Started</ul>
-
           </div>
-          
         </div>
-
       </div>
       <p>&copy; 2024 Shareameal.com</p>
 

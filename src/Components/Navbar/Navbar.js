@@ -1,51 +1,38 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import logo from '../Assets/navlogo.png'
-import './Navbar.css'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../Assets/navlogo.png';
+import './Navbar.css';
 
 function Navbar() {
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
 
-  const [menu,setMenu] = useState('Home')
-  const navigate = useNavigate()
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const isVisible = prevScrollPos > currentScrollPos;
 
+      setIsNavVisible(isVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
 
-  function handleClick(page){
-    setMenu(page)
-    navigate(page)
-    
-  }
+    window.addEventListener('scroll', handleScroll);
 
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setIsOpen(!isOpen);
-  // };
-  
-  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
-
-    <div className='navbar'>
-        <div className="nav-logo">
-          <img src={logo} alt="" />
-        </div>
-        <div className='nav__menu'>
-
-          <ul className='nav-menu'>
-            <li onClick={()=>handleClick('/')}>Home {menu === 'Home'?<hr/>:<></>}</li>
-            <li onClick={()=>handleClick('/about')}>About {menu === '.about'?<hr/>:<></>}</li>
-            <li onClick={()=>handleClick('/Contact')}>Contact {menu === 'Contact'?<hr/>:<></>}</li>
-
-            <div className="nav-login">
-              <Link to='/login'><button> Get Started</button></Link>
-              {/* <Link to='/Signup'><button>Sign Up</button></Link> */}
-              
-            </div>
-          </ul>
-         
-        </div>
+    <div className={`navbar ${isNavVisible ? '' : 'hidden'}`}>
+      <div className="nav-logo">
+        <Link to='/'><img src={logo} alt="" /></Link>
+      </div>
+      <div>
+        <Link to='/login'><button className='btn'> Get Started</button></Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

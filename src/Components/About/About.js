@@ -1,47 +1,49 @@
 import React from 'react'
 import './About.css'
-import Aboutpng from '../Assets/about2.jpg'
+import Aboutpng from '../Assets/about1.png'
+import Track from '../Assets/onenotloc.png';
+import SDG from '../Assets/SDG-2.png'
 
 
 
 function About() {
   return (
-  <div className="about">
-    <div className="row">
-      <div className="column-right" style={{backgroundColor: 'white', width: '50%', height:'90vh'}}>
+  <div className="about" id="#about">
+    <div className="abt-sec">
+      {/* <div className="column-right">
        <img src={Aboutpng} alt="" />
-      </div>
-      
-      <div className="column-left">
-       <h2>About Us<hr/></h2>
-       <div className="para">
-       <p>
-       Share-a-Meal is a user-friendly platform tackling food waste and hunger. 
-       Businesses and individuals with extra food can easily list it on our app, 
-       specifying details like type, quantity, and location. Our matching algorithm connects
-        this surplus to nearby charities, food banks, and people in need. 
-       </p>
-       <br />
-       <p>Share-a-Meal streamlines the donation process with real-time tracking, 
-        notifications, and a feedback system for all parties involved. We collaborate with local
-         organizations to ensure food reaches those who need it most. 
-        </p>
-        <br />
-       <p>This innovative approach promotes sustainability by reducing
-         food waste and fosters a more equitable society by alleviating hunger. 
-         Share-a-Meal's user-friendly app is accessible nationwide, empowering everyone to be part of the solution. 
-      </p>
+      </div> */}
+        {/* <h2>About Us</h2> */}
+        <div className="abt-cards">
+          <div className='card-item'>
+            <div className='card-txt'>
+            <h5>Web Application</h5>
+            <p>
+            Share-a-Meal is a user-friendly platform tackling food waste and hunger. 
+            </p>
+            </div>
+            <img src={Aboutpng} alt='' />
+          </div>
+          <div className='card-item'>
+            <div className='card-txt'>
+            <h5>Standing Out</h5>
+            <p>We streamline the donation process with real-time tracking, notifications, and a feedback system.
+            </p>
+            </div>
+            <img src={Track} alt='' />
+          </div>
+          <div className='card-item'>
+            
+            <div className='card-txt'>
+            <h5>UN SDG 2</h5>
+            <p>This innovative approach promotes sustainability by reducing food waste and fosters a more equitable society by alleviating hunger.
+            </p>
+            </div>
+            <img src={SDG} alt='' className='sdg'/>
+          </div>
     </div>
     </div>
-    </div>
-
-        
-
-      </div>
-
-         
-  
-        
+    </div>     
   )
 }
 

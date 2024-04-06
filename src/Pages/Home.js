@@ -11,7 +11,6 @@ function Home() {
         <About />
         <GetToKnow />
         <Stats />
-
     </div>
   )
 }
