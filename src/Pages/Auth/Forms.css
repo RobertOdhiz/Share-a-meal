@@ -59,6 +59,23 @@
 .form-container .buttons button:last-child {
     background-color: #5e9918;
 }
+.error-message {
+    padding: 1em 2em;
+    background-color: rgba(255, 0, 0, 0.315);
+    color: gray;
+    border: red;
+    border-radius: 0.25em;
+}
 
+.success-message {
+    padding: 1em 2em;
+    background-color: rgba(0, 128, 0, 0.397);
+    color: gray;
+    border: green;
+    border-radius: 0.25em;
+}
 
+.link {
+    cursor: pointer;
+}
   

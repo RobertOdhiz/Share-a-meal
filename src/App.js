@@ -8,12 +8,13 @@ import Contact from './Components/Contact/Contact';
 import Registration from './Pages/Auth/SignUp';
 import CBORegistration from './Pages/Auth/Semi-Components/CBOReg';
 import PartnerRegistration from './Pages/Auth/Semi-Components/PartnerReg';
+import Login from './Pages/Auth/Login';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar />
+
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='#about' element={"#about" } />
@@ -21,8 +22,10 @@ function App() {
           <Route path='/register' element={<Registration />} />
           <Route path='/register/CBO' element={<CBORegistration />} />
           <Route path='/register/Partner' element={<PartnerRegistration />} />
+          <Route path='login' element={<Login />} />
         </Routes>
         <Footer />
+        <Navbar />
       </BrowserRouter>
     </div>
   );
