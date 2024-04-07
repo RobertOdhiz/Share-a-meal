@@ -20,11 +20,11 @@ function Registration() {
 
     return (
         <div className='choose'>
-            <div className='form-component'>
-            <h1 className='form-sec-title'>Who are you signing up as?</h1>
+            <div className='formcomponent'>
+            <h1 className='form-title'>Who are you signing up as?</h1>
             <div className={`${!userType ? '' : 'selection'}`}>
                  
-            <div className='form-fields' id='fields'>
+            <div className='formfields' id='fields'>
 
                     <label>
                         <input
@@ -45,10 +45,11 @@ function Registration() {
                         />
                         Partner
                     </label>
+            </div>
                     <button onClick={handleSubmit}>Continue</button>
 
                     
-        </div>
+        {/* </div> */}
         </div>
                 
             </div>
