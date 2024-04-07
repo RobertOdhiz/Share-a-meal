@@ -21,6 +21,7 @@ const Operations = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Operations</h1>
+      <div className='form-fields' id='fields'>
       <div>
         <h2>Weekdays</h2>
         <input
@@ -50,6 +51,7 @@ const Operations = ({ formData, handleChange }) => {
             <li key={index}>{hours}</li>
           ))}
         </ul>
+      </div>
       </div>
     </div>
   );

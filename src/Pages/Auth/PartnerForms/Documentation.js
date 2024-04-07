@@ -9,6 +9,7 @@ const Documentation = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Relevant Documentation</h1>
+      <div className='form-fields' id='fields'>
       <input
         name='documents'
         type='file'
@@ -22,6 +23,7 @@ const Documentation = ({ formData, handleChange }) => {
           ))}
         </ul>
       )}
+      </div>
     </div>
   );
 };

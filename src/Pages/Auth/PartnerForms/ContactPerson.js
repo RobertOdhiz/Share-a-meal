@@ -4,6 +4,7 @@ const PartnerContactPerson = ({ formData, handleChange }) => {
   return (
     <div>
       <h1>Contact Person Details</h1>
+      <div className='form-fields' id='fields'>
       <input
         name='contactPersonName'
         type='text'
@@ -36,6 +37,7 @@ const PartnerContactPerson = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
         required
       />
+      </div>
     </div>
   );
 };

@@ -1,17 +1,13 @@
-.form-component{
-    /* background-color: #b0b8a6c7; */
-    height: 60vh;
-    border-radius: 20px;
-    width: 600px;
 
-}
 .form-component .form-fields input{
-    border: none;
-    /* border-radius: 5px; */
-    /* border: #5e9918; */
-    border-bottom: 2px solid #5e9918;
-
+    border: 1px solid #5e9918;
+    border-radius: 0.25em;
 }
+
 .form-component .form-fields ::placeholder{
     color: #c1ceb2;
+}
+
+.form-component .form-fields input:focus {
+    border: 2px solid #c85103;
 }

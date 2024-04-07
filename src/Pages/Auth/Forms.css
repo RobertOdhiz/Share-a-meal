@@ -52,6 +52,11 @@
     color: white;
 }
 
+.form-container button:disabled {
+    background-color: #5f99184d;
+    color: gray;
+}
+
 .form-container .buttons button:first-child {
     background-color: #c85103;
 }
@@ -78,4 +83,21 @@
 .link {
     cursor: pointer;
 }
-  
+
+.form-fields input[type="radio"] {
+    width: 1em;
+}
+
+.form-component label:has(input[type="radio"]),
+.form-component label:has(input[type="checkbox"]) {
+    font-size: 20px;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.form-component .btn-add {
+    width: 100%;
+}
+

@@ -4,6 +4,7 @@ const OptInPreferences = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Opt-In Preferences</h1>
+      <div className='form-fields' id='fields'>
       <input
         name='emailOptIn'
         type='checkbox'
@@ -27,6 +28,8 @@ const OptInPreferences = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
       />
       <label htmlFor='newsletterOptIn'>Subscribe to newsletter</label>
+      </div>
+      
     </div>
   );
 };

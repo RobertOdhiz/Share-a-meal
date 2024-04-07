@@ -4,6 +4,7 @@ const TermsAgreement = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Compliance & Terms Agreement</h1>
+      <div className='form-fields' id='fields'>
       <label>
         <input
           name='termsAgreement'
@@ -14,6 +15,7 @@ const TermsAgreement = ({ formData, handleChange }) => {
         />
         I agree to comply with all terms and conditions.
       </label>
+      </div>
     </div>
   );
 };

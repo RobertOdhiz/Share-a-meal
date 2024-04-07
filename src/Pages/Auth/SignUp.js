@@ -19,7 +19,7 @@ function Registration() {
     };
 
     return (
-        <div className='choose'>
+        <div className='form-container'>
             <div className='form-component'>
             <h1 className='form-sec-title'>Who are you signing up as?</h1>
             <div className={`${!userType ? '' : 'selection'}`}>
@@ -32,7 +32,6 @@ function Registration() {
                             value='CBO'
                             checked={userType === 'CBO'}
                             onChange={handleUserTypeChange}
-                            // style={{fontSize : '35px'}}
                         />
                         CBO
                     </label>
@@ -45,15 +44,10 @@ function Registration() {
                         />
                         Partner
                     </label>
-                    <button onClick={handleSubmit}>Continue</button>
-
-                    
+                    <button className='btn' onClick={handleSubmit} disabled={!userType}>Continue</button>      
         </div>
         </div>
-                
             </div>
-
-
         </div>
     );
 }

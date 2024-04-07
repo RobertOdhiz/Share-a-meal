@@ -4,6 +4,7 @@ const TransportationAvailability = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Transportation Availability</h1>
+      <div className='form-fields' id='fields'>
       <input
         name='transportationType'
         type='text'
@@ -20,6 +21,8 @@ const TransportationAvailability = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
         required
       />
+      </div>
+      
     </div>
   );
 };

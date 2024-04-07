@@ -23,6 +23,7 @@ const CompanyDetails = ({ formData, handleChange }) => {
   return (
     <div className='form-component'>
       <h1 className='form-sec-title'>Organization Details</h1>
+      <div className='form-fields' id='fields'>
       <select
         name='partnerType'
         value={formData.partnerType}
@@ -57,12 +58,24 @@ const CompanyDetails = ({ formData, handleChange }) => {
           value={newProduct}
           onChange={handleProductChange}
         />
-        <button onClick={addProduct}>+</button>
+        <button
+          classname='btn-add'
+          onClick={addProduct}
+          style={{width: "3em", marginTop: "1em", fontSize: "1em", cursor: "pointer", alignSelf: "center", fontWeight: "bold", border: "none", outline: "none", background: "#c85103", color: "white", boxShadow: "0px 0.25em 0.5em #c85103", padding:"0.5em", borderRadius: "10em"}}
+        >
+          +
+        </button>
       </div>
       {formData.products.map((product, index) => (
-        <div key={index}>
-          <span>{product}</span>
-          <button onClick={() => removeProduct(index)}>-</button>
+        <div key={index} className='product-list'>
+          <span className='list-item'>{product}</span>
+          <button
+            classname='btn-add'
+            onClick={() => removeProduct(index)}
+            style={{width: "3em", marginTop: "1em", fontSize: "1em", cursor: "pointer", alignSelf: "center", fontWeight: "bold", border: "none", outline: "none", background: "#5e9918", color: "white", boxShadow: "0px 0.25em 1em #5e9918", padding:"0.5em", borderRadius: "10em"}}
+            >
+              <i class="bi bi-trash3"></i>
+            </button>
         </div>
       ))}
       <input
@@ -73,6 +86,7 @@ const CompanyDetails = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
         required
       />
+      </div>
     </div>
   );
 };
