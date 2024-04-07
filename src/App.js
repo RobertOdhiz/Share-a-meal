@@ -16,7 +16,6 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='#about' element={"#about" } />
@@ -29,6 +28,7 @@ function App() {
           <Route path='/dashboard/CBO' element={<CBODashboard />} />
         </Routes>
         <Footer />
+      <Navbar />
       </BrowserRouter>
     </div>
   );

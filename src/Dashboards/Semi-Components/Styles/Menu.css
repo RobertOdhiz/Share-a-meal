@@ -1,0 +1,82 @@
+.side-menu {
+    width: 25em;
+    min-height: 100vh;
+    left: 0;
+    box-shadow: 0 0.2em 0.5em gray;
+    padding: 1em 0;
+    background-color: white;
+    margin: 0.5em;
+    border-radius: .8em;
+    margin-top: 50px;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .side-menu.closed {
+    width: 50px;
+    padding: 0;
+  }
+  
+  .side-menu .menu-items {
+    display: flex;
+    top: 0;
+    gap: 1em;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 1em;
+  }
+  
+  .side-menu .menu-items li {
+    width: 100%;
+    padding: 1em 2em;
+    color: gray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1em;
+  }
+  
+  .side-menu .menu-items li:last-child {
+    border-bottom: none;
+  }
+  
+  .side-menu .menu-items .bi-arrow-left {
+    margin: 0 2em;
+    box-shadow: 0 .2em .8em gray;
+    padding: .5em;
+    border-radius: 50%;
+  }
+  
+  .side-menu .menu-items li:hover,
+  .side-menu .menu-items li:focus {
+    border-radius: 1.5em;
+    box-shadow: 0 .2em 1em  gray;
+    color: #c85103;
+  }
+  
+  .menu-items img {
+    height: 12em;
+  }
+  
+  .side-menu .menu-items span.hidden,
+  .side-menu .menu-items img.hidden {
+    display: none;
+  }
+  
+  .side-menu .menu-items span.visible,
+  .side-menu .menu-items img.visible {
+    display: block;
+  }
+  
+  .menu-items i {
+    font-size: 1.15em;
+  }
+  .menu-items i:hover,
+  .menu-items i:focus {
+    color: #c85103;
+  }
+
+  .dashboard-data {
+    width: 100%;
+  }

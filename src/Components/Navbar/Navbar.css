@@ -13,8 +13,8 @@
     padding-top: 20px;
     text-align: center;
     top: 0;
-    /* position: fixed; */
-    background: white;
+    position: fixed;
+    background: rgba(128, 128, 128, 0.705);
     backdrop-filter: blur(0.9);
   }
   
@@ -107,7 +107,7 @@
   
   .user-icon i {
     font-size: 3em;
-    color: white;
+    color: #c85103;
     filter: drop-shadow(0 2px 4px #ffffff50);
   }
 
