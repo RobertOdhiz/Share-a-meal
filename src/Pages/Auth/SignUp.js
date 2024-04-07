@@ -19,12 +19,13 @@ function Registration() {
     };
 
     return (
+
         <div className='form-container'>
             <div className='form-component'>
             <h1 className='form-sec-title'>Who are you signing up as?</h1>
             <div className={`${!userType ? '' : 'selection'}`}>
                  
-            <div className='form-fields' id='fields'>
+            <div className='formfields' id='fields'>
 
                     <label>
                         <input

@@ -1,2 +1,80 @@
+*{
+    overflow-y: scroll;
+}
+.formcomponent .form-title{
+    color: #5e9918;
+    /* margin-left: 40%; */
+}
+.formcomponent {
+    margin-top: 300px;
+    margin-left: 38%;
+    height: 60vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: auto; */
+    gap: 3em;
+    /* margin-bottom: 0px; */
+}
 
-  
+.formfields {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.formcomponent button{
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 30px;
+    width: 300px;
+    border-radius: 20px;
+    height: 40px;
+    background-color: #c85103;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.formcomponent button:hover{
+    background-color: #5e9918;
+}
+.formfields input, .formfields textarea {
+    width: 100px;
+    height: 0.5em;
+    outline: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    /* color: green; */
+}
+.formfields label{
+    color: #5e9918;
+    font-size: 1.5em;
+    /* margin-right: 5px; */
+}
+
+/* .form-container .buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.form-container .buttons button {
+    min-width: 200px;
+    height: 40px;
+    border-radius: 0.75em;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: white;
+} */
+
+

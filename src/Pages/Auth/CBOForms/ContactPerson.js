@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Forms.css'
 
 function ContactPerson({ formData, handleChange }) {
   return (
