@@ -31,9 +31,9 @@ function Footer() {
         <div className="column">
           <h4>Contact Us</h4>
           <ul>
-            <li><i class="bi bi-telephone-forward"></i><span>Call Us</span></li>
-            <li><i class="bi bi-chat-left-dots"></i><span>Message Us</span></li>
-            <li><i class="bi bi-envelope-at"></i><span>Email Us</span></li>
+            <li><i className="bi bi-telephone-forward"></i><span>Call Us</span></li>
+            <li><i className="bi bi-chat-left-dots"></i><span>Message Us</span></li>
+            <li><i className="bi bi-envelope-at"></i><span>Email Us</span></li>
           </ul>
         </div>
     </div>

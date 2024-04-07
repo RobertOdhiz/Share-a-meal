@@ -1,8 +1,14 @@
 
-.form-component .form-fields input{
-    border: 1px solid #5e9918;
+.form-component .form-fields input,
+.form-fields select,
+.form-component .form-fields textarea {
+    border: 1px solid #4e4e4e;
     border-radius: 0.25em;
 }
+
+/* .form-component .form-fields textarea {
+    min-height: 10em;
+} */
 
 .form-component .form-fields ::placeholder{
     color: #c1ceb2;
@@ -10,4 +16,18 @@
 
 .form-component .form-fields input:focus {
     border: 2px solid #c85103;
+}
+
+.staff-volunteer-input {
+    display: block;
+    align-items: center;
+}
+
+.staff-volunteer-input .add-icon,
+.staff-volunteer-input .remove-icon {
+    border: 1px solid black;
+    font-size: 2em;
+}
+.form-fields input[type="checkbox"] {
+    font-size: 1em;
 }

@@ -5,6 +5,7 @@ function Operations({ formData, handleChange }) {
         <div className='form-component'>
             <h1 className='form-sec-title'>Operational Details</h1>
             <div className='form-fields'>
+                <h5 className='txt'>Add Operating Hours</h5>
                 <input
                     name='daysAndHours'
                     type='text'
@@ -13,6 +14,7 @@ function Operations({ formData, handleChange }) {
                     onChange={(e) => handleChange(e, 'CBO')}
                     required
                 />
+                <h5 className='txt'>How frequently do you do distribution to families</h5>
                 <input
                     name='distributionFrequency'
                     type='text'
@@ -21,6 +23,7 @@ function Operations({ formData, handleChange }) {
                     onChange={(e) => handleChange(e, 'CBO')}
                     required
                 />
+                <h5 className='txt'>What Resources do you need to maximize donations</h5>
                 <input
                     name='foodDonationRequirements'
                     type='text'

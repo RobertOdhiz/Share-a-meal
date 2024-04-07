@@ -5,7 +5,6 @@ export function useFormState() {
     cboName: '',
     legalStatus: '',
     registrationNumber: '',
-    missionStatement: '',
     yearEstablished: '',
     contactPersonName: '',
     position: '',
@@ -14,10 +13,8 @@ export function useFormState() {
     mailingAddress: '',
     website: '',
     serviceArea: '',
-    beneficiariesServed: '',
     servicesDescription: '',
     targetDemographic: [],
-    otherDemographic: '',
     daysAndHours: [],
     distributionFrequency: '',
     foodDonationRequirements: '',
@@ -30,6 +27,7 @@ export function useFormState() {
     additionalComments: '',
     optInPreferences: [],
     termsAgreement: false,
+    Role: 'CBO'
   });
 
   const [partnerFormData, setPartnerFormData] = useState({
@@ -41,7 +39,6 @@ export function useFormState() {
     phone: '',
     address: '',
     city: '',
-    postalCode: '',
     website: '',
     products: [],
     capacity: '',
@@ -55,12 +52,30 @@ export function useFormState() {
     termsAgreement: false,
     weekdayHours: [],
     weekendHours: [],
+    Role: 'Partner'
   });  
+
+  const handleFileChange = (e, typeuser) => {
+    const { name } = e.target;
+
+    const files = Array.from(e.target.files);
+
+    if (typeuser === 'CBO') {
+        setCBOFormData(prevValues => ({
+            ...prevValues,
+            [name]: [...prevValues.documents, ...files], 
+        }));
+    } else if (typeuser === 'Partner') {
+        setPartnerFormData(prevValues => ({
+            ...prevValues,
+            [name]: [...prevValues.documents, ...files],
+        }));
+    }
+};
 
   const handleChange = (e, typeuser) => {
     const { name, value } = e.target;
 
-    console.log(name + value);
     if (typeuser === 'CBO') {
         setCBOFormData(prevValues => ({
             ...prevValues,
@@ -74,5 +89,5 @@ export function useFormState() {
     }
   };
 
-  return { CBOFormData, partnerFormData, handleChange };
+  return { CBOFormData, partnerFormData, handleChange, handleFileChange };
 }

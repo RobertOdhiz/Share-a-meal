@@ -5,6 +5,7 @@ const AdditionalComments = ({ formData, handleChange }) => {
     <div className='form-component'>
       <h1 className='form-sec-title'>Additional Comments</h1>
       <div className='form-fields' id='fields'>
+        <h5 className='txt'>Some Extra Information</h5>
       <textarea
         name='additionalComments'
         placeholder='Enter any additional comments here'

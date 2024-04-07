@@ -15,7 +15,8 @@ function GeographicLocation({ formData, handleChange }) {
                     required
                 />
                 </div>
-                <div>
+                <h5 className='quiz'>Do you have your means of transporting goods?</h5>
+                <div className='choose'>
                     <label>
                         <input
                             type='radio'
@@ -41,7 +42,6 @@ function GeographicLocation({ formData, handleChange }) {
                     </label>
                 </div>
             </div>
-        // </div>
     );
 }
 

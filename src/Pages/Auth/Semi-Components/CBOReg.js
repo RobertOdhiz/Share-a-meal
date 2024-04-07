@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { handleCBOReg } from './utils';
 import { useFormState } from '../../../Components/forms/formutils';
 import Terms from '../CBOForms/Terms';
 import Extra from '../CBOForms/Extra';
@@ -12,14 +11,13 @@ import GeographicLocation from '../CBOForms/Region';
 import ContactPerson from '../CBOForms/ContactPerson';
 import Organization from '../CBOForms/Organization';
 import './../Forms.css'
+import { useNavigate } from 'react-router-dom'
 
 function CBORegistration() {
 
-    const { CBOFormData, handleChange } = useFormState();
+    const { CBOFormData, handleChange, handleFileChange } = useFormState();
     const [step, setStep] = useState(1);
-    const [errorMessage, setErrorMessage] = useState(null);
-    const [successMessage, setSuccessMessage] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handlePrev = () => {
         setStep(prevStep => Math.max(prevStep - 1, 1));
@@ -29,22 +27,11 @@ function CBORegistration() {
         setStep(prevStep => Math.min(prevStep + 1, 10));
     };
     
-    const handleSubmitCBO = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
-        try {
-          const message = await handleCBOReg(CBOFormData);
-          setSuccessMessage(message);
-        } catch (error) {
-          setErrorMessage(error.message || 'An error occurred during registration.');
-        } finally {
-            setIsLoading(false);
-        }
-      };
+    
 
     return (
         <div>
-            <form className='form-container' onSubmit={handleSubmitCBO}>
+            <div className='form-container'>
                 {step === 1 &&
                     <Organization formData={CBOFormData} handleChange={handleChange} />
                 }
@@ -74,7 +61,7 @@ function CBORegistration() {
                 }
 
                 {step === 8 &&
-                    <Documentation formData={CBOFormData} handleChange={handleChange} />
+                    <Documentation formData={CBOFormData} handleChange={handleFileChange} />
                 }
 
                 {step === 9 &&
@@ -86,11 +73,10 @@ function CBORegistration() {
                 }
                 <div className='buttons'>
                 <button onClick={handlePrev}>Previous</button>
-                {step < 10 ? <button onClick={handleNext} >Next</button> : <button type="submit" disabled={!CBOFormData.complianceConfirmation || !CBOFormData.termsAgreement || isLoading}>{isLoading ? 'Setting things up...' : 'Finish'}</button>}
+                {step < 10 && <button onClick={handleNext}>Next</button>}
+                {step === 10 && <button onClick={() => navigate('/confirm-registration')} disabled={!CBOFormData.termsAgreement}>Finish</button> }
                 </div>
-            </form>
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-            {successMessage && <p className="success-message">{successMessage}</p>}
+            </div>
         </div>
     )
 };

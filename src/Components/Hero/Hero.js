@@ -4,6 +4,7 @@ import './Hero.css';
 import HeroBackground from '../Assets/Heroimg.jpg';
 import HeroTwo from '../Assets/heroback.jpg';
 import Arrow from '../Assets/Icons/arrow.svg';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   const [isHeroTwo, setIsHeroTwo] = useState(false);
@@ -29,10 +30,11 @@ function Hero() {
       <div className='hero'>
         <h2>Share<span>-a-</span>Meal</h2>
         <p className='tagline'>Let's Make Food Affordable For The Hungry</p>
-        <button className='btn'>
+        <Link to='/register/partner'><button className='btn'>
           <p>Partner With Us</p>
           <img src={Arrow} alt='' />
         </button>
+        </Link>
       </div>
     </section>
   );

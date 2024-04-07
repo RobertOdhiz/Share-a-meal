@@ -5,3 +5,32 @@
     align-items: center;
     gap: 1em;
 }
+
+.form-component .choose {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-component .choose label:has(input[type="radio"]) {
+    font-size: 20px;
+    margin: 1em;
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.form-component .quiz {
+    font-size: 1.2em;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25em;
+    font-weight: 300;
+}
+
+.form-component .txt {
+    font-size: 1.2em;
+    color: black;
+    padding-bottom: 0.25em;
+    font-weight: 300;
+}

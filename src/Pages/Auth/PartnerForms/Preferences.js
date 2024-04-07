@@ -12,7 +12,6 @@ const OptInPreferences = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
       />
       <label htmlFor='emailOptIn'>Receive email notifications</label>
-      <br />
       <input
         name='smsOptIn'
         type='checkbox'
@@ -20,7 +19,6 @@ const OptInPreferences = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
       />
       <label htmlFor='smsOptIn'>Receive SMS notifications</label>
-      <br />
       <input
         name='newsletterOptIn'
         type='checkbox'

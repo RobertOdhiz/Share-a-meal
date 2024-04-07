@@ -25,7 +25,7 @@ function Registration() {
             <h1 className='form-sec-title'>Who are you signing up as?</h1>
             <div className={`${!userType ? '' : 'selection'}`}>
                  
-            <div className='formfields' id='fields'>
+            <div className='choose' id='fields'>
 
                     <label>
                         <input
@@ -44,9 +44,9 @@ function Registration() {
                             onChange={handleUserTypeChange}
                         />
                         Partner
-                    </label>
-                    <button className='btn' onClick={handleSubmit} disabled={!userType}>Continue</button>      
+                    </label>     
         </div>
+        <button className='btn ct' onClick={handleSubmit} disabled={!userType}>Continue</button> 
         </div>
             </div>
         </div>

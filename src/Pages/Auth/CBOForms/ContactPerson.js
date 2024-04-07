@@ -32,6 +32,7 @@ function ContactPerson({ formData, handleChange }) {
         />
         <input
             name='mailingAddress'
+            type='text'
             placeholder='Mailing Address'
             value={formData.mailingAddress}
             onChange={(e) => handleChange(e, 'CBO')}

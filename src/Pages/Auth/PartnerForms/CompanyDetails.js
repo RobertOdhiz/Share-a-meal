@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './../../css/styles.css'
 
 const CompanyDetails = ({ formData, handleChange }) => {
   const [newProduct, setNewProduct] = useState('');
@@ -34,8 +35,9 @@ const CompanyDetails = ({ formData, handleChange }) => {
         <option value='SuperMarket'>SuperMarket</option>
         <option value='Food Vendor'>Food Vendor</option>
         <option value='Farmer'>Farmer</option>
-        <option value='Local Producers'>Local Producers</option>
+        <option value='Local Producers'>Local Producer</option>
       </select>
+      {formData.partnerType && <h5 className='txt'>Name of {formData.partnerType}</h5>}
       <input
         name='companyName'
         type='text'
@@ -44,6 +46,7 @@ const CompanyDetails = ({ formData, handleChange }) => {
         onChange={(e) => handleChange(e, 'Partner')}
         required
       />
+      <h5 className='txt'>Company Website url</h5>
       <input
         name='website'
         type='text'
@@ -51,33 +54,44 @@ const CompanyDetails = ({ formData, handleChange }) => {
         value={formData.website}
         onChange={(e) => handleChange(e, 'Partner')}
       />
-      <div>
+      <h5 className='txt'>Add Products You Can Sell to us</h5>
         <input
           type='text'
           placeholder='Products'
           value={newProduct}
           onChange={handleProductChange}
         />
+        <div style={{width: "100%"}}>
         <button
-          classname='btn-add'
+          className='btn-add'
           onClick={addProduct}
-          style={{width: "3em", marginTop: "1em", fontSize: "1em", cursor: "pointer", alignSelf: "center", fontWeight: "bold", border: "none", outline: "none", background: "#c85103", color: "white", boxShadow: "0px 0.25em 0.5em #c85103", padding:"0.5em", borderRadius: "10em"}}
+          style={{border: "none", outline:"none", padding: "1em 2em", border: "1px solid gray", borderRadius: "0.25em", background: "gray", cursor: "pointer", color: "white", fontSize: "1.05em"}}
         >
-          +
+          Add Product
         </button>
-      </div>
+        <div
+        style={{display: "flex", alignItems: "center", flexWrap: "wrap", maxHeight: "200px", border: "1px dashed gray", marginTop: "1em", overflow: "auto", gap: "2em", justifyContent: "center", width: "100%", flexDirection: "row"}}
+        >
       {formData.products.map((product, index) => (
-        <div key={index} className='product-list'>
+        <div
+        key={index}
+        className='product-list'
+        >
+          <div style={{minWidth: "100px", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
           <span className='list-item'>{product}</span>
           <button
-            classname='btn-add'
+            className='btn-add'
             onClick={() => removeProduct(index)}
-            style={{width: "3em", marginTop: "1em", fontSize: "1em", cursor: "pointer", alignSelf: "center", fontWeight: "bold", border: "none", outline: "none", background: "#5e9918", color: "white", boxShadow: "0px 0.25em 1em #5e9918", padding:"0.5em", borderRadius: "10em"}}
+            style={{border: "none", outline:"none", margin: "0.5em", padding: "0.25em 0.5em", border: "1px solid gray", borderRadius: "0.25em", cursor: "pointer", color: "gray", fontSize: "1.05em"}}
             >
-              <i class="bi bi-trash3"></i>
+              <i className="bi bi-trash3"></i>
             </button>
+            </div>
         </div>
       ))}
+      </div>
+        </div>
+        <h5 className='txt'>How Much can you donate averagely</h5>
       <input
         name='capacity'
         type='text'

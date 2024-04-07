@@ -30,6 +30,7 @@ function Resources({ formData, handleChange }) {
         <div className='form-component'>
             <h1 className='form-sec-title'>Capacity and Resources</h1>
             <div className='form-fields'>
+            <h5 className='txt'>Add a list of Staff or Volunteers You have</h5>
                 {staffVolunteersList.map((staffVolunteer, index) => (
                     <div key={index} className='staff-volunteer-input'>
                         <input
