@@ -36,8 +36,8 @@ function Navbar() {
             <i className="bi bi-person-circle"></i>
           </button>
         ) : (
-          <Link to="/register/?userType=" className="btn">
-            Get Started
+          <Link to="/register/?userType=">
+            <button className="btn">Get Started</button>
           </Link>
         )}
         {user && showDropdown && (
