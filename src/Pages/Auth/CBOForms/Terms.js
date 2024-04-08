@@ -16,7 +16,7 @@ function Terms({ formData, handleChange }) {
                         className="custom-checkbox"
                         required
                     />
-                    <label htmlFor="compliance-checkbox" className="checkbox-label">I confirm compliance with <a href="#" className="terms-link">Regulations</a>.</label>
+                    <label htmlFor="compliance-checkbox" className="checkbox-label">I confirm compliance with <span className="terms-link">Regulations</span>.</label>
                 </div>
                 <div className="check">
                     <input
@@ -28,7 +28,7 @@ function Terms({ formData, handleChange }) {
                         className="custom-checkbox"
                         required
                     />
-                    <label htmlFor="terms-checkbox" className="checkbox-label">I agree to the <a href="#" className="terms-link">terms and conditions</a>.</label>
+                    <label htmlFor="terms-checkbox" className="checkbox-label">I agree to the <span className="terms-link">terms and conditions</span>.</label>
                 </div>
             </div>
         </div>

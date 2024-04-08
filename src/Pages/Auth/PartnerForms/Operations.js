@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './../../css/styles.css';
 
 const Operations = ({ formData, handleChange }) => {
   const [weekdayHours, setWeekdayHours] = useState('');
@@ -22,40 +23,40 @@ const Operations = ({ formData, handleChange }) => {
     <div className='form-component'>
       <h1 className='form-sec-title'>Operations</h1>
       <div className='form-fields' id='fields'>
-      <div>
-        <h5 className='txt'>Weekdays</h5>
-        <input
-          type='text'
-          placeholder='Enter hours (e.g., 9:00 AM - 5:00 PM)'
-          value={weekdayHours}
-          onChange={(e) => setWeekdayHours(e.target.value)}
-        />
-        <button onClick={handleAddWeekdayHours}
-          style={{border: "none", outline:"none", padding: "0.5em 2em", marginTop: "1em", border: "1px solid gray", borderRadius: "0.25em", background: "gray", cursor: "pointer", color: "white", fontSize: "1.05em"}}
-          >Add</button>
-        <ul>
-          {formData.weekdayHours && formData.weekdayHours.map((hours, index) => (
-            <li key={index}>{hours}</li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h5 className='txt'>Weekends</h5>
-        <input
-          type='text'
-          placeholder='Enter hours (e.g., 9:00 AM - 5:00 PM)'
-          value={weekendHours}
-          onChange={(e) => setWeekendHours(e.target.value)}
-        />
-        <button onClick={handleAddWeekendHours}
-          style={{border: "none", outline:"none", padding: "0.5em 2em", marginTop: "1em", border: "1px solid gray", borderRadius: "0.25em", background: "gray", cursor: "pointer", color: "white", fontSize: "1.05em"}}
-          >Add</button>
-        <ul>
-          {formData.weekendHours && formData.weekendHours.map((hours, index) => (
-            <li key={index}>{hours}</li>
-          ))}
-        </ul>
-      </div>
+        <div>
+          <h5 className='txt'>Weekdays</h5>
+          <input
+            type='text'
+            placeholder='Enter hours (e.g., 9:00 AM - 5:00 PM)'
+            value={weekdayHours}
+            onChange={(e) => setWeekdayHours(e.target.value)}
+          />
+          <button onClick={handleAddWeekdayHours} className='btn-add'>
+            Add
+          </button>
+          <ul>
+            {formData.weekdayHours && formData.weekdayHours.map((hours, index) => (
+              <li key={index}>{hours}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h5 className='txt'>Weekends</h5>
+          <input
+            type='text'
+            placeholder='Enter hours (e.g., 9:00 AM - 5:00 PM)'
+            value={weekendHours}
+            onChange={(e) => setWeekendHours(e.target.value)}
+          />
+          <button onClick={handleAddWeekendHours} className='btn-add'>
+            Add
+          </button>
+          <ul>
+            {formData.weekendHours && formData.weekendHours.map((hours, index) => (
+              <li key={index}>{hours}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
