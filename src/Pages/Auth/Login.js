@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { handleLogin, handleSendPasswordResetEmail } from './Semi-Components/utils';
 import './Forms.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { delay } from '../../Dashboards/utils';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ function Login() {
   const [successMessage, setSuccessMessage] = useState(null);
   const [isPasswordShown, setisPasswordShown] = useState(false);
   const [isForgotPasswordMode, setIsForgotPasswordMode] = useState(false);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +35,8 @@ function Login() {
       } else {
         const message = await handleLogin(formData);
         setSuccessMessage(message);
+        delay(1000);
+        navigate('/dashboard')
       }
     } catch (error) {
       setErrorMessage(error.message || 'An error occurred.');
@@ -49,9 +53,10 @@ function Login() {
   return (
     <div>
       <form className='form-container' onSubmit={handleLoginsubmit}>
-      <h1>Login</h1>
         {isForgotPasswordMode ? (
-          <div>
+          <div className='form-component'>
+            <div className='form-fields' style={{gap: ".5em"}}>
+              <h5 className="txt">Enter Your Email Address</h5>
             <input
               name='resetEmail'
               type='email'
@@ -60,13 +65,21 @@ function Login() {
               onChange={handleInputChange}
               required
             />
-            <button disabled={isLoading || !formData.resetEmail}>
+            </div>
+            <button disabled={isLoading || !formData.resetEmail} className='btn'>
               {isLoading ? 'Sending Reset Email...' : 'Reset Password'}
             </button>
-            <p onClick={toggleForgotPasswordMode}>Back to Login</p>
+            <p onClick={toggleForgotPasswordMode}
+            style={{cursor: "pointer", textDecoration: "underline"}}
+            >
+              Back to Login
+              </p>
           </div>
         ) : (
-          <div>
+          <div className='form-component'>
+            <h2>Login</h2>
+            <div className='form-fields' style={{gap: ".5em"}}>
+              <h5 className='txt'>Email</h5>
             <input
               name='email'
               type='email'
@@ -75,7 +88,8 @@ function Login() {
               onChange={handleInputChange}
               required
             />
-            <div>
+            <div className='form-fields' style={{gap: ".5em"}}>
+              <h5 className="txt">Password</h5>
               <input
                 name='password'
                 type={isPasswordShown ? 'text' : 'password'}
@@ -84,19 +98,22 @@ function Login() {
                 onChange={handleInputChange}
                 required
               />
-              <p onClick={() => setisPasswordShown(!isPasswordShown)}>
-                {isPasswordShown ? 'Hide' : 'Show'}
+              <p onClick={() => setisPasswordShown(!isPasswordShown)}
+              style={{cursor: "pointer", textDecoration: "underline"}}>
+                {isPasswordShown ? 'Hide Password' : 'Show Password'}
               </p>
+            </div>
             </div>
             <button
               disabled={isLoading || !formData.email || !formData.password}
+              className='btn'
             >
               {isLoading ? 'Logging You in...' : 'Login'}
             </button>
             <p onClick={toggleForgotPasswordMode} className='link'>Forgot Password?</p>
+            <p>Or Register with Us Today. <Link to='/register' className='link'>Sign Up</Link></p>
           </div>
         )}
-        <p>Or Register with Us Today. <Link to='/register' className='link'>Sign Up</Link></p>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {successMessage && <p className="success-message">{successMessage}</p>}

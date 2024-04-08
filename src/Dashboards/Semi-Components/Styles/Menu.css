@@ -1,13 +1,13 @@
 .side-menu {
     width: 25em;
-    min-height: 100vh;
+    max-height: 100vh;
     left: 0;
     box-shadow: 0 0.2em 0.5em gray;
     padding: 1em 0;
     background-color: white;
     margin: 0.5em;
     border-radius: .8em;
-    margin-top: 50px;
+    /* position: fixed; */
     transition: width 0.3s ease-in-out;
   }
   
@@ -79,4 +79,87 @@
 
   .dashboard-data {
     width: 100%;
+  }
+
+  .dashboard-top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 2em;
+    background-color: #c85103;
+    color: white;
+    border-radius: 2em;
+    box-shadow: 0 .2em .5em gray;
+    padding: 3em;
+  }
+
+  .dashboard-top i {
+    font-size: 5em;
+    padding: .25em;
+  }
+
+  .dashboard-top-content {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: start;
+    text-align: left;
+  }
+
+  .dash-body {
+    width: 100%;
+    padding: 2em;
+  }
+
+  .txt {
+    font-size: 24px;
+    font-weight: 200;
+  }
+
+  .overview-sec {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+
+  .overview-card {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: .5em;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: .5em;
+  }
+
+  .overview-card i {
+    font-size: 3em;
+  }
+
+  .overview-card p:first-child {
+    font-size: 20px;
+  }
+
+  .overview-card .numbers {
+    font-size: 4em;
+  }
+
+  .overview {
+    padding: 2em;
+    width: 100%;
+  }
+
+  .active {
+    color: #c85103;
   }

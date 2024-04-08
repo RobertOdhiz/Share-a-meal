@@ -7,19 +7,19 @@ function Stats() {
       <h1>Statistics</h1>
       <div className='stats-cards'>
         <div className='stats-card'>
-          <i class="bi bi-percent"></i>
+          <i className="bi bi-percent"></i>
           <p><span className='numbers'>40%</span><br /><span> of food that Reaches consumers is thrown away</span></p>
         </div>
         <div className='stats-card'>
-          <i class="bi bi-house"></i>
+          <i className="bi bi-house"></i>
           <p><span className='numbers'>1 out of 5</span><br /><span> families either sleep hungry or survive with a meal a day</span></p>
         </div>
         <div className='stats-card'>
-          <i class="bi bi-people"></i>
+          <i className="bi bi-people"></i>
           <p><span className='numbers'>1M+</span><br /><span> population in Kibra</span></p>
         </div>
         <div className='stats-card'>
-          <i class="bi bi-person-check"></i>
+          <i className="bi bi-person-check"></i>
           <p><span className='numbers'>17,000+</span><br /><span> CBOs available in Kibra</span></p>
         </div>
       </div>

@@ -23,9 +23,9 @@ function App() {
           <Route path='/register' element={<Registration />} />
           <Route path='/register/CBO' element={<CBORegistration />} />
           <Route path='/register/Partner' element={<PartnerRegistration />} />
-          <Route path='login' element={<Login />} />
+          <Route path='//login' element={<Login />} />
           <Route path='/confirm-registration' element={<RegSubmission />} />
-          <Route path='/dashboard/CBO' element={<CBODashboard />} />
+          <Route path='/dashboard' element={<CBODashboard />} />
         </Routes>
         <Footer />
       <Navbar />

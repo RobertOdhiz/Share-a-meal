@@ -1,6 +1,26 @@
 .dashboard {
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 2em;
+    padding: 4.5em;
+}
+
+.dashboard .dashboard-left {
+    flex: 0 0 auto;
+}
+
+.dashboard .dashboard-right {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+    
+    .dashboard .dashboard-right {
+        width: 100%;
+    }
 }

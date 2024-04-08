@@ -11,14 +11,13 @@ import OptInPreferences from '../PartnerForms/Preferences';
 import AdditionalComments from '../PartnerForms/Extra';
 import TermsAgreement from '../PartnerForms/Agreements';
 import './../Forms.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function PartnerRegistration() {
 
   const [step, setStep] = useState(1);
   const { partnerFormData, handleChange, handleFileChange } = useFormState();
-  const navigate = useNavigate();
   
 
   const handlePrev = () => {
@@ -28,6 +27,8 @@ function PartnerRegistration() {
   const handleNext = () => {
       setStep(prevStep => Math.min(prevStep + 1, 10));
   };
+
+  const progressPercentage = (step - 1) * 10;
 
   return (
     <div>
@@ -72,6 +73,7 @@ function PartnerRegistration() {
           }}><button disabled={!partnerFormData.complianceConfirmation || !partnerFormData.termsAgreement}>Finish</button></Link> }
         </div>
       </div>
+      <div style={{ width: `${progressPercentage}%`, height: ".25em", backgroundColor: "green" }}></div>
     </div>
   )
 }
